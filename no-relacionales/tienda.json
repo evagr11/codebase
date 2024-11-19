@@ -1,0 +1,45 @@
+{
+    
+    "categoría":[
+        {
+            "nombre": "consolas",
+            "sección": 1
+        },
+        {
+            "nombre": "perifericos",
+            "sección": 2
+        }
+    ],
+    "productos":[
+        {
+            "nombre": "PS5-PRO",
+            "precio": "800€",
+            "categoría": "consolas"
+        },
+        {
+            "nombre": "PS5",
+            "precio": "500€",
+            "categoría": "consolas"
+        },
+        {
+            "nombre": "Mando PS5",
+            "precio": "70€",
+            "categoría": "perifericos"
+        }
+    ],
+    "pedidos": [
+        {
+            "id": 1,
+            "usuario": "pepe",
+            "direccion": "av.america nº1",
+            "producto": "PS5"
+        }
+    ],
+    "facturas":[
+        {
+            "id-pedido": 1,
+            "fecha-hora": "06/11/2024-12:02",
+            "precio": "500€"
+        }
+    ]
+}

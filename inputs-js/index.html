@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    input{
+        /*background-color:rgb(218, 160, 205);*/
+        display:block;
+    }
+</style>
+</head>
+<body>
+    <form onchange="accion()">
+        
+        <input type="text" placeholder="usuario" id="inputTexto">
+        <input type="button" value="hola">
+        <input type="checkbox">
+        <input type="color">
+        <input type="password" placeholder="contraseña">
+        <input type="date">
+        <input type="month">
+    </form>
+    
+    <div id="contenedor"> 
+
+    </div>
+    <script>
+        function accion(){
+            console.log("El usuario cambio algo")
+            const inputTexto= document.querySelector("#inputTexto")
+            const valor= inputTexto.value
+            console.log(valor)
+            const contenedor= document.querySelector("#contenedor")
+            const pTexto= document.querySelector("p")
+            pTexto.innerText = valor
+            contenedor.appendChild(pTexto)
+        }
+    </script>
+    
+</body>
+</html>
