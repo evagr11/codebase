@@ -19,7 +19,7 @@
 ```javascript
 <style>
     input{
-        display: block;  Para que muestre en bloque y no inline
+        display: block;  Para que muestre en bloque y no em linea
     }
 </style>
 ```
