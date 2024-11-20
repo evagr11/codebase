@@ -13,7 +13,7 @@ data = {
     "password": contraseña_usuario
 }
 url = 'https://dummyjson.com/user/login'
-response = requests.push(url, data=data)
+response = requests.post(url, data=data)
 
 print(response.json())
 
