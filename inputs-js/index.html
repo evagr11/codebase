@@ -4,40 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<style>
-    input{
-        /*background-color:rgb(218, 160, 205);*/
-        display:block;
-    }
-</style>
+    <style>
+        input{
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <form onchange="accion()">
-        
-        <input type="text" placeholder="usuario" id="inputTexto">
-        <input type="button" value="hola">
-        <input type="checkbox">
-        <input type="color">
-        <input type="password" placeholder="contraseña">
-        <input type="date">
-        <input type="month">
+        <input type="color" id="inputColor">
+        <input type="date" id="inputDate">
+        <input type="datetime-local" id="inputDateTimeLocal">
+        <input type="email" id="inputEmail">
+        <input type="file" id="inputFile">
+        <input type="month" id="inputMonth">
+        <input type="number" id="inputNumber">
+        <input type="password" id="inputPassword">
+        <input type="radio" name="radioGroup" id="inputRadio">
+        <input type="range" id="inputRange">
+        <input type="text" placeholder="texto" id="inputText">
+        <input type="time" id="inputTime">
     </form>
-    
-    <div id="contenedor"> 
-
-    </div>
+    <div id="contenedor1"></div>
+    <div id="contenedor2"></div>
+    <div id="contenedor3"></div>
+    <div id="contenedor4"></div>
+    <div id="contenedor5"></div>
+    <div id="contenedor6"></div>
+    <div id="contenedor7"></div>
+    <div id="contenedor8"></div>
+    <div id="contenedor9"></div>
+    <div id="contenedor10"></div>
+    <div id="contenedor11"></div>
+    <div id="contenedor12"></div>
+    <div id="contenedor13"></div>
     <script>
         function accion(){
-            console.log("El usuario cambio algo")
-            const inputTexto= document.querySelector("#inputTexto")
-            const valor= inputTexto.value
-            console.log(valor)
-            const contenedor= document.querySelector("#contenedor")
-            const pTexto= document.querySelector("p")
-            pTexto.innerText = valor
-            contenedor.appendChild(pTexto)
+            console.log("El usuario cambió algo")
+            
+            const inputColor = document.querySelector("#inputColor")
+            const color = inputColor.value
+            const contenedor1 = document.querySelector("#contenedor1")
+            const pColor = document.createElement("p")
+            pColor.innerText = `Color seleccionado: ${color}`
+            contenedor1.appendChild(pColor)
+            
+            const inputDate = document.querySelector("#inputDate")
+            const date = inputDate.value
+            const contenedor2 = document.querySelector("#contenedor2")
+            const pDate = document.createElement("p")
+            pDate.innerText = `Fecha seleccionada: ${date}`
+            contenedor2.appendChild(pDate)
+            
+            const inputDateTimeLocal = document.querySelector("#inputDateTimeLocal")
+            const dateTimeLocal = inputDateTimeLocal.value
+            const contenedor3 = document.querySelector("#contenedor3")
+            const pDateTimeLocal = document.createElement("p")
+            pDateTimeLocal.innerText = `Fecha y hora local seleccionada: ${dateTimeLocal}`
+            contenedor3.appendChild(pDateTimeLocal)
+            
+            const inputEmail = document.querySelector("#inputEmail")
+            const email = inputEmail.value
+            const contenedor4 = document.querySelector("#contenedor4")
+            const pEmail = document.createElement("p")
+            pEmail.innerText = `Email ingresado: ${email}`
+            contenedor4.appendChild(pEmail)
+            
+            const inputFile = document.querySelector("#inputFile")
+            const file = inputFile.files[0] ? inputFile.files[0].name : "No se seleccionó archivo"
+            const contenedor5 = document.querySelector("#contenedor5")
+            const pFile = document.createElement("p")
+            pFile.innerText = `Archivo seleccionado: ${file}`
+            contenedor5.appendChild(pFile)
+            
+            const inputMonth = document.querySelector("#inputMonth")
+            const month = inputMonth.value
+            const contenedor6 = document.querySelector("#contenedor6")
+            const pMonth = document.createElement("p")
+            pMonth.innerText = `Mes seleccionado: ${month}`
+            contenedor6.appendChild(pMonth)
+            
+            const inputNumber = document.querySelector("#inputNumber")
+            const number = inputNumber.value
+            const contenedor7 = document.querySelector("#contenedor7")
+            const pNumber = document.createElement("p")
+            pNumber.innerText = `Número ingresado: ${number}`
+            contenedor7.appendChild(pNumber)
+            
+            const inputPassword = document.querySelector("#inputPassword")
+            const password = inputPassword.value
+            const contenedor8 = document.querySelector("#contenedor8")
+            const pPassword = document.createElement("p")
+            pPassword.innerText = `Contraseña ingresada: ${password}`
+            contenedor8.appendChild(pPassword)
+            
+            const inputRadio = document.querySelector("#inputRadio")
+            const radio = inputRadio.checked ? "Seleccionado" : "No seleccionado"
+            const contenedor9 = document.querySelector("#contenedor9")
+            const pRadio = document.createElement("p")
+            pRadio.innerText = `Radio botón: ${radio}`
+            contenedor9.appendChild(pRadio)
+            
+            const inputRange = document.querySelector("#inputRange")
+            const range = inputRange.value
+            const contenedor10 = document.querySelector("#contenedor10")
+            const pRange = document.createElement("p")
+            pRange.innerText = `Rango seleccionado: ${range}`
+            contenedor10.appendChild(pRange)
+            
+            const inputText = document.querySelector("#inputText")
+            const text = inputText.value
+            const contenedor11 = document.querySelector("#contenedor11")
+            const pText = document.createElement("p")
+            pText.innerText = `Texto ingresado: ${text}`
+            contenedor11.appendChild(pText)
+            
+            const inputTime = document.querySelector("#inputTime")
+            const time = inputTime.value
+            const contenedor12 = document.querySelector("#contenedor12")
+            const pTime = document.createElement("p")
+            pTime.innerText = `Hora seleccionada: ${time}`
+            contenedor12.appendChild(pTime)
         }
     </script>
-    
 </body>
 </html>
