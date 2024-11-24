@@ -1,6 +1,4 @@
 
-# Inputs
-
 ## Tipos de inputs
 ```javascript
 <input type="button" value="Boton">
@@ -19,7 +17,7 @@
 ```javascript
 <style>
     input{
-        display: block;  Para que muestre en bloque y no em linea
+        display: block;  Para que muestre en bloque y no inline
     }
 </style>
 ```
@@ -36,8 +34,7 @@ Van dentro de javascript
     }
 </script>
 ```
+## IDs
 
-## Tarea
-
-El usuario ingresó:
-y hacerlo con todos los inputs
+- Para seleccionar el id usamos "#"
+- Ejemplo: document.querySelector("#ejemplo")
