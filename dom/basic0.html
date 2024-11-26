@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inputs</title>
+</head>
+<body>
+  <input type="text" oninput="mostrar()" id="input_usuario">
+  <p id="resultado"></p>
+
+  <script>
+    // la función mostrar() se ejecuta desde 
+    // el propio <input type="text"> que tenemos en el html
+
+    const input = document.getElementById('input_usuario')
+    const p = document.getElementById('resultado')
+
+    function mostrar(){ 
+      p.innerText = input.value
+    }
+  </script>
+</body>
+</html>
