@@ -33,5 +33,3 @@ En los datos:
 - Headers (metadatos para interpretacion del servidor)
 - Body (informacion más compleja, JSON, formularios, iamgenes...)
 
-DEBERES -> Authenticated user.
-dummyjson
