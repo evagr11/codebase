@@ -19,5 +19,3 @@ data = {
 url = 'https://dummyjson.com/user/login'
 response = requests.post(url, data=data)
 print(response.json())
-
-

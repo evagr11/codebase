@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
         input{
+
             display: block;
+
         }
+        
     </style>
+
 </head>
+
 <body>
+
     <form onchange="accion()">
         <input type="color" id="inputColor">
         <input type="date" id="inputDate">
@@ -24,6 +32,7 @@
         <input type="range" id="inputRange">
         <input type="text" placeholder="texto" id="inputText">
         <input type="time" id="inputTime">
+
     </form>
     <div id="contenedor1"></div>
     <div id="contenedor2"></div>
@@ -38,8 +47,11 @@
     <div id="contenedor11"></div>
     <div id="contenedor12"></div>
     <div id="contenedor13"></div>
+
     <script>
+
         function accion(){
+
             console.log("El usuario cambió algo")
             
             const inputColor = document.querySelector("#inputColor")
@@ -125,7 +137,10 @@
             const pTime = document.createElement("p")
             pTime.innerText = `Hora seleccionada: ${time}`
             contenedor12.appendChild(pTime)
+
         }
+
     </script>
+
 </body>
 </html>
