@@ -3,9 +3,9 @@ import requests
 from dotenv import load_dotenv
 load_dotenv()
 
-XMasterKey = os.getnv("X_MASTER_KEY")
-XAccessKey = os.getnv("X_ACCESS_KEY")
-bin_id = os.getnv("BIN_ID")
+XMasterKey = os.getenv("X_MASTER_KEY")
+XAccessKey = os.getenv("X_ACCESS_KEY")
+bin_id = os.getenv("BIN_ID")
 
 print(XMasterKey)
 url_root = "https://api.jsonbin.io/v3"
@@ -15,5 +15,19 @@ headers = {
     "X-Access-Key": XAccessKey
 }
 
-r = requests.get(url_root + route, headers=headers)
-print(r.json())
+usuario = {
+    "username": "aaaaa",
+    "password": "bbbbb"
+}
+
+def read_db():
+    response = requests.get(url_root + route, headers=headers)
+    print(response.json())
+
+def update_db():
+    response = requests.put(url_root + route, headers=headers, json=usuario)
+    print(response.json())
+
+read_db()
+update_db()
+read_db()
