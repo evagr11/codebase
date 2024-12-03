@@ -3,7 +3,7 @@ import requests
 from dotenv import load_dotenv
 load_dotenv()
 
-TOKEN = os.getnv("TOKEN")
+TOKEN = os.getenv("TOKEN")
 API_URL = "https://api-inference.huggingface.co/models/bigscience/bloom"
 headers = {"Authorization": f"{TOKEN}"}
 payload = {
