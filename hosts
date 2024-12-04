@@ -8,8 +8,8 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 
-192.168.60.233 diego
-192.168.60.237 angel
+192.168.60.211 diego
+192.168.60.237 ángel
 192.168.60.234 eva
 192.168.60.235 nico
 192.168.60.236 andres
