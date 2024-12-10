@@ -1,4 +1,4 @@
-let ancho = 3
+let ancho = 7
 let largo = 3
 
 let Box = ["╔", "╗", "╚", "╝", "║", "═"]
