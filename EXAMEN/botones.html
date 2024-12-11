@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query</title>
+    <style>
+        button{
+            background: lightblue;
+        }
+        #b1{
+            background: lightcoral;
+        }
+        .fondo-rosa{
+            background: lightpink;
+        }
+        .color-rosa{
+            color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <p class="color-rosa">Hola mundo</p>
+    <button id="b1">Boton 1</button>
+    <button>Boton 2</button>
+    <button>Boton 3</button>
+    <button id="b4" class="fondo-rosa color-rosa">Boton 4</button>
+    <button id="b5" class="fondo-rosa color-rosa">Boton 5</button>
+    <button id="b6" class="fondo-rosa color-rosa">Boton 6</button>
+
+    <script>
+        const boton_por_query = document.querySelector("button");
+        const boton_por_id = document.querySelector("#b3");
+        const otro_boton_por_id = document.getElementById("b3");
+        const boton_por_clase = document.querySelector(".fondo-verde");
+        const todos_los_botones = document.querySelectorAll("button");
+
+    </script>
+</body>
+</html>
