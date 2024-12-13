@@ -20,13 +20,22 @@
             background: lightskyblue;
             color: whitesmoke;
         }
+        section{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
     </style>
 </head>
 <body>
     <!--Comentario-->
-    <p>Puntos</p>
-    <p id="contadorPuntos">100</p>
-    <button>Click</button>
+    <section>
+        <p>Puntos</p>
+        <p id="contadorPuntos">100</p>
+        <button>Click</button>
+    </section>
 
     <script>
         const button = document.querySelector("button");
