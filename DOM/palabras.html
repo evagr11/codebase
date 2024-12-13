@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inputs</title>
+</head>
+<body>
+  <button onclick="mostrar()">click</button>
+  <p id="resultado"></p>
+  <script>
+    //este ejemplo usa un addEventListener para disparar el evento click
+    const boton = document.querySelector('button')
+    const p = document.querySelector('p')
+    //boton.addEventListener('click', mostrar)
+    const vocales = ['a', 'e', 'i', 'o', 'u']
+    const consonantes = ['l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+
+    const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
+    function crearSilaba(){
+      let silaba = ''
+      if(random(0, 1) === 0){
+        silaba += consonantes[random(0, consonantes.length - 1)]
+      }
+      silaba += vocales[random(0, vocales.length - 1)]
+      return silaba 
+    }
+    function crearPalabra(){
+      let palabra = ''
+      for(let i = 0; i < random(2, 5); i++){
+        palabra += crearSilaba()
+      }
+      return palabra
+    }
+
+    function crearTexto(){
+      let texto = ''
+      for(let i = 0; i < random(2, 5); i++){
+        texto += crearPalabra() + ' '
+      }
+      return texto
+    }
+    function mostrar(){
+      p.innerText = crearTexto()
+    }
+
+  </script>
+</body>
+</html>

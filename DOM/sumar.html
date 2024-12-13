@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operaciones</title>
+</head>
+<body>
+  <input type="number" id="valor1">
+  <input type="number" id="valor2">
+  <button></button>
+  <p></p>
+
+  <script>
+    // este ejemplo usa dos inputs de tipo number para sumar los valores
+    // y mostrar el resultado en un párrafo
+    const input1 = document.querySelector('#valor1')
+    const input2 = document.querySelector('#valor2')
+    const button = document.querySelector('button')
+    const p = document.querySelector('p')
+    button.innerText = 'Sumar'
+    button.addEventListener('click', () => {
+      const resultado = parseInt(input1.value) + parseInt(input2.value)
+      p.innerText = resultado
+    })
+  </script>
+</body>
+</html>

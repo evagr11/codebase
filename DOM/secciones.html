@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secciones</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        section{
+            height: 100vh;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .fondo-rojo{
+            background-color: hotpink;
+        }
+
+        .gradiente-1{
+            background: linear-gradient(180deg, hotpink, purple);
+        }
+
+        .gradiente-2{
+            background: linear-gradient(180deg, purple, hotpink);
+        }
+
+        .emoji{
+            font-size: 8rem;
+        }
+    </style>
+</head>
+<body>
+    <section class="fondo-rojo">
+        <h1>&lt;section&gt;</h1> <p>se usa para separar contenido</p>
+    </section>
+    
+
+    <section class="gradiente-1">
+        <h2>Mediante css</h2>
+        <p>podemos hacer que midan todo el alto de la pantalla</p>
+
+    </section>
+
+    <section class="gradiente-2">
+        <h2>También nos servirá para centrar el contenido</h2>
+        <p class="emoji">🤓</p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inputs</title>
+  <style>
+    input{
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <form onchange="updateValues()">
+    <input type="checkbox" name="" id="inputCheck">
+    <input type="color" name="" id="inputColor">
+    <input type="date" name="" id="inputDate">
+    <input type="datetime-local" name="" id="inputDateTimeLocal">
+    <input type="email" name="" id="inputEmail">
+    <input type="file" name="" id="inputFile">
+    <input type="month" name="" id="inputMonth">
+    <input type="number" name="" id="inputNumber">
+    <input type="password" name="" id="inputPassword">
+    <input type="radio" name="" id="inputRadio">
+    <input type="range" name="" id="inputRange" min="0" max="100">
+    <input type="text" name="" id="inputText">
+    <input type="time" name="" id="inputTime">    
+  </form>
+
+  <div id="resultados"></div>
+
+  <script>
+    function update(id){
+      const elemento = document.querySelector(id)
+      let valor = ''
+      if(elemento.type === 'checkbox'){
+        valor = elemento.checked
+      } else {
+        valor = elemento.value
+      }
+      const p = document.createElement('p')
+      p.innerText = `${id}: ${valor}`
+      document.querySelector('#resultados').appendChild(p)
+    }
+
+    function updateValues(){
+      document.querySelector('#resultados').innerHTML = ''
+      update('#inputCheck');
+      update('#inputColor');
+      update('#inputDate');
+      update('#inputDateTimeLocal');
+      update('#inputEmail');
+      update('#inputFile');
+      update('#inputMonth');
+      update('#inputNumber');
+      update('#inputPassword');
+      update('#inputRadio');
+      update('#inputRange');
+      update('#inputText');
+      update('#inputTime');
+    }
+  </script>
+</body>
+</html>

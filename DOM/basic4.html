@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inputs</title>
+</head>
+<body>
+  <p>Ejemplo en el que modificamos el css mediante javascript</p>
+  <button>Cambia el color haciendo click</button>
+  <script>
+    const p = document.querySelector("p")
+    const button = document.querySelector("button")
+    p.style.backgroundColor = "lightblue"
+    button.addEventListener("click", () => {
+      if(p.style.backgroundColor === "lightblue"){
+        p.style.backgroundColor = "lightgreen"
+      } else {
+        p.style.backgroundColor = "lightblue"
+      }
+      
+    })
+
+  </script>
+</body>
+</html>

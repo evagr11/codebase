@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emojis</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background: lightgray;
+        }
+
+        section{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .emoji{
+            font-size: 8rem;
+            cursor: pointer;
+            user-select: none;
+            transition: font-size 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Click para cambiar emoji</h2>
+        <p class="emoji" id="emoji1"></p>
+    </section>
+
+
+    <section>
+        <h2>Cambio automatico con setInterval()</h2>
+        <p class="emoji" id="emoji2"></p>
+    </section>
+
+    <section>
+        <h2>Haz click para activar setInterval()</h2>
+        <p>setTimeout() se ocupará de detenerlo</p>
+        <p class="emoji" id="emoji3"></p>
+    </section>
+
+    <section>
+        <h2>Cambiar tamaño de fuente con JS+CSS</h2>
+        <p class="emoji" id="emoji4"></p>
+    </section>
+
+    <script>
+        const emojis = [
+            '🤓', '😎', '😍', '😂', '😜', 
+            '😉', '😊', '😘', '😁', '😋', 
+            '😆', '😇', '😅', '😄', '😃', 
+            '😀', '😗', '😙', '😚', '🙂', 
+            '🤗', '🤔', '😐', '😑', '😶', 
+            '🙄', '😏', '😣', '😥', '😮', 
+            '🤐', '😯', '😪', '😫', '😴', 
+            '😌', '😛', '😜', '😝', '🤤', 
+            '😒', '😓', '😔', '😕', '🙃', 
+            '🤑', '😲', '🙁', '😖', '😞', 
+            '😟', '😤', '😢', '😭', '😦', 
+            '😧', '😨', '😩', '😬', '😰', 
+            '😱', '😳', '😵', '😡', '😠', 
+            '😷', '🤒', '🤕', '🤢', '🤧', 
+            '😇', '🤠', '🤡', '🤥', '🤓', 
+            '😈', '👿', '👹', '👺', '💀', 
+            '👻', '👽', '🤖', '💩', '😺', 
+            '😸', '😹', '😻', '😼', '😽', 
+            '🙀', '😿', '😾', '👐', '🙌', 
+            '👏', '🤝', '👍', '👎', '👊', 
+            '✊', '🤛', '🤜', '🤞', '🤘', 
+            '👌', '👈', '👉', '👆', '👇'
+        ]
+
+        function random(min, max){
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        // Seccion 1
+        const emoji1 = document.querySelector('#emoji1');
+        emoji1.textContent = '🤓';
+
+        emoji1.addEventListener('click', () => {
+            emoji1.textContent = emojis[random(0, emojis.length)];
+        });
+
+        // Seccion 2
+        const emoji2 = document.querySelector('#emoji2');
+        emoji2.textContent = '🤓';
+        setInterval(() => {
+            emoji2.textContent = emojis[random(0, emojis.length)];
+        }, 100);
+
+        // Seccion 3
+        const emoji3 = document.querySelector('#emoji3');
+        emoji3.textContent = '🤓';
+
+        emoji3.addEventListener('click', () => {
+            //interval with timeout to stop
+            const interval = setInterval(() => {
+                emoji3.textContent = emojis[random(0, emojis.length)];
+            }, 25);
+
+            setTimeout(() => {
+                clearInterval(interval);
+            }, 500);
+        });
+
+        // Seccion 4
+
+        const emoji4 = document.querySelector('#emoji4');
+        emoji4.textContent = '🤓';
+
+        let size = 8;
+
+        emoji4.addEventListener('click', () => {
+            if(size === 8){
+                size = 16;
+            }else{
+                size = 8;
+            }
+        emoji4.style.fontSize = `${size}rem`;
+        });
+
+    </script>
+</body>
+</html>
