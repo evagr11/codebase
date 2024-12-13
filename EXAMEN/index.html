@@ -25,22 +25,23 @@
 <body>
     <!--Comentario-->
     <p>Puntos</p>
-    <p id = "contadorPuntos">100</p>
+    <p id="contadorPuntos">100</p>
     <button>Click</button>
 
     <script>
         const button = document.querySelector("button");
         const contadorPuntos = document.getElementById("contadorPuntos");
-        let puntos = localStorage.getItem('puntos');  //let porq el valor cambiara
+        let puntos = localStorage.getItem('puntos');  // let porq el valor cambiara
+        
         if(puntos === null){
             puntos = 0;
+        } else {
+            puntos = parseInt(puntos, 10); // Asegurarse de que los puntos sean un número
         }
+
+        // Establece el valor inicial del contador
         contadorPuntos.textContent = puntos;
-        function sumarPuntos(){
-            puntos++;  
-            localStorage.setItem('puntos', puntos);
-            contadorPuntos.innerText = puntos;
-        }
+
         // Función para cambiar el color del contador según el número de puntos
         function cambiarColorPuntos(puntos) {
             if (puntos <= 10) {
@@ -59,15 +60,16 @@
         // Función que incrementa los puntos y actualiza el color
         function sumarPuntos(){
             puntos++;  
-            localStorage.setItem('puntos', puntos);
-            contadorPuntos.innerText = puntos;
-            cambiarColorPuntos(puntos); // Actualiza el color cada vez que los puntos cambian
+            localStorage.setItem('puntos', puntos); // Guarda los puntos actualizados en localStorage
+            contadorPuntos.innerText = puntos; // Muestra el nuevo valor de los puntos
+            cambiarColorPuntos(puntos); // Actualiza el color según los puntos
         }
 
         // Cambia el color inicial cuando se carga la página
         cambiarColorPuntos(puntos);
 
-        button.addEventListener("click", sumarPuntos)
+        // Agrega el evento para aumentar los puntos cuando se hace clic en el botón
+        button.addEventListener("click", sumarPuntos);
     </script>
     
 </body>
