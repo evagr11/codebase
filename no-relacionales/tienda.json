@@ -1,45 +1,69 @@
 {
-    
-    "categoría":[
+    "categoría": [
         {
-            "nombre": "consolas",
+            "nombre": "maquillaje",
             "sección": 1
         },
         {
-            "nombre": "perifericos",
+            "nombre": "cuidado de la piel",
             "sección": 2
+        },
+        {
+            "nombre": "fragancias",
+            "sección": 3
         }
     ],
-    "productos":[
+    "productos": [
         {
-            "nombre": "PS5-PRO",
-            "precio": "800€",
-            "categoría": "consolas"
+            "nombre": "Base de Maquillaje Perfect Skin",
+            "precio": "25€",
+            "categoría": "maquillaje"
         },
         {
-            "nombre": "PS5",
-            "precio": "500€",
-            "categoría": "consolas"
+            "nombre": "Paleta de Sombras Sunset Glow",
+            "precio": "30€",
+            "categoría": "maquillaje"
         },
         {
-            "nombre": "Mando PS5",
-            "precio": "70€",
-            "categoría": "perifericos"
+            "nombre": "Sérum Facial Hidratante GlowDrop",
+            "precio": "40€",
+            "categoría": "cuidado de la piel"
+        },
+        {
+            "nombre": "Crema Antiarrugas Night Repair",
+            "precio": "50€",
+            "categoría": "cuidado de la piel"
+        },
+        {
+            "nombre": "Perfume Rose Essence 50ml",
+            "precio": "60€",
+            "categoría": "fragancias"
         }
     ],
     "pedidos": [
         {
             "id": 1,
-            "usuario": "pepe",
-            "direccion": "av.america nº1",
-            "producto": "PS5"
+            "usuario": "ana_gomez",
+            "direccion": "Calle Flores nº10",
+            "producto": "Base de Maquillaje Perfect Skin"
+        },
+        {
+            "id": 2,
+            "usuario": "maria_fernandez",
+            "direccion": "Av. Sol nº25",
+            "producto": "Sérum Facial Hidratante GlowDrop"
         }
     ],
-    "facturas":[
+    "facturas": [
         {
             "id-pedido": 1,
-            "fecha-hora": "06/11/2024-12:02",
-            "precio": "500€"
+            "fecha-hora": "20/12/2024-15:30",
+            "precio": "25€"
+        },
+        {
+            "id-pedido": 2,
+            "fecha-hora": "20/12/2024-16:00",
+            "precio": "40€"
         }
     ]
 }
