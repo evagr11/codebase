@@ -7,33 +7,66 @@ fetch('https://dummyjson.com/recipes/1')
     h1.innerText = nombre
     document.body.appendChild(h1)
 
+    //imagen
+    const imagen = document.createElement("img");
+    imagen.src = "https://cdn.dummyjson.com/recipe-images/1.webp";
+    imagen.alt = "Imagen de la receta";
+    imagen.style.width = "300px"; 
+    imagen.style.height = "auto"; 
+    document.body.appendChild(imagen);
+
     //dificultad
-    const dificultad = data.difficulty
-    const dificultadElemento = document.createElement("p")
-    dificultadElemento.innerText = dificultad
-    document.body.appendChild(dificultadElemento)
+    const DIFICULTAD = document.createElement("h4");
+    DIFICULTAD.innerText = "Dificultad";
+    const dificultadValor = document.createElement("p");
+    dificultadValor.innerText = data.difficulty; 
+    document.body.appendChild(DIFICULTAD);
+    document.body.appendChild(dificultadValor);
+
+    //tiempo de cocinado
+    const TIEMPO1 = document.createElement("h4");
+    TIEMPO1.innerText = "Tiempo de cocinado";
+    const tiempoValor1 = document.createElement("p");
+    tiempoValor1.innerText = data.cookTimeMinutes + " minutos"; 
+    document.body.appendChild(TIEMPO1);
+    document.body.appendChild(tiempoValor1);
+    
+    //tiempo de preparación
+    const TIEMPO2 = document.createElement("h4");
+    TIEMPO2.innerText = "Tiempo de preparación";
+    const tiempoValor2 = document.createElement("p");
+    tiempoValor2.innerText = data.prepTimeMinutes + " minutos"; 
+    document.body.appendChild(TIEMPO2);
+    document.body.appendChild(tiempoValor2);
 
     //ingredientes
-    const titulo = document.createElement("h2");
-    titulo.innerText = "Ingredientes";
-    document.body.appendChild(titulo);
-    const ingredientes = data.ingredients
-    const ingredientesElemento = document.createElement("ul")
-    ingredientesElemento.innerText = ingredientes
-    document.body.appendChild(ingredientesElemento)
-    for (let i = 0; i < data.ingredientes.length; i++) {
+    const INGREDIENTES = document.createElement("h2");
+    INGREDIENTES.innerText = "Ingredientes";
+    document.body.appendChild(INGREDIENTES);
+    const ingredientes = data.ingredients;
+    const ingredientesElemento = document.createElement("ul");
+    for (let i = 0; i < ingredientes.length; i++) {
         const item = document.createElement("li");
-        item.innerText = data.ingredientes[i];
-        lista.appendChild(item);
+        item.innerText = ingredientes[i];
+        ingredientesElemento.appendChild(item); 
     }
-    document.body.appendChild(lista);
-
-
-    const pasos = data.instructions
-    const pasosElemento = document.createElement("ul")
-    pasosElemento.innerText = pasos
-    document.body.appendChild(pasosElemento)
+    document.body.appendChild(ingredientesElemento);
     
+    //pasos
+    const PASOS = document.createElement("h2");
+    PASOS.innerText = "Pasos a seguir";
+    document.body.appendChild(PASOS);
+    const pasos = data.instructions; 
+    const pasosElemento = document.createElement("ol"); 
+    for (let i = 0; i < pasos.length; i++) {
+    const item = document.createElement("li"); 
+    item.innerText = pasos[i]; 
+    pasosElemento.appendChild(item);
+    }
+    document.body.appendChild(pasosElemento);
+
+    //frase final
+    const FINAL = document.createElement("h1");
+    FINAL.innerText = "LISTA PARA DISFRUTAR";
+    document.body.appendChild(FINAL);
 })
-
-
