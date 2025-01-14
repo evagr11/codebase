@@ -1,0 +1,21 @@
+// Datos de ejemplo
+const data = {
+    ingredientes: ["Harina", "Azúcar", "Huevos", "Leche", "Mantequilla"]
+};
+
+// Crear el encabezado "Ingredientes"
+const titulo = document.createElement("h1");
+titulo.innerText = "Ingredientes";
+document.body.appendChild(titulo);
+
+// Crear la lista de ingredientes
+const lista = document.createElement("ul");
+
+data.ingredientes.forEach((ingrediente) => {
+    const item = document.createElement("li");
+    item.innerText = ingrediente;
+    lista.appendChild(item);
+});
+
+// Agregar la lista al cuerpo del documento
+document.body.appendChild(lista);
