@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div{
+            width: 100px;
+            height: 100px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+        }
+        .rojo{
+            background: red;
+        }
+        .amarillo{
+            background: yellow;
+        }
+        .naranja{
+            background: orange;
+        }
+        .rosa{
+            background: hotpink;
+        }
+        .azulclaro{
+            background: cyan;
+        }
+        .gris{
+            background: grey;
+        }
+        body{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap-reverse;
+        }
+    </style>
+</head>
+<body>
+    <div class="gris"></div>
+    <script>
+        const colores = ["rojo", "verde", "rosa", "naranja", "amarillo"]
+        //console.log("Mathrandom()", Math.random()*colores.length)
+
+        
+        for(let i=0; i < 1000; i++){
+            const div =document.createElement("div")
+            const randomColor = colores[Math.floor(Math.random()*colores.length)]
+            div.className = randomColor
+            document.body.appendChild(div)
+        }
+    </script>
+</body>
+</html>
