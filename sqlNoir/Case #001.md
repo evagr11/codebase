@@ -22,27 +22,20 @@ AND scar = 'left cheek'
 
 | id | name | attire | scar |
 |:--:|:----:|:----:|:--------:|
-|3	|Frankie Lombardi|trench coat|left cheek|
-|183|Vincent Malone|trench coat|left cheek|
+|((3))	|Frankie Lombardi|trench coat|left cheek|
+|((183))|Vincent Malone|trench coat|left cheek|
 
-## suspect_id = confesion
+## suspect_id = 3 o 183
 ```bash
 SELECT * FROM interviews
-WHERE suspect_id = '3'
+WHERE suspect_id IN (3,183)
 ```
 | suspect_id | transcript |
 |:----------:|:----------:|
 |3	|NULL|
+|183|((I wasn’t going to steal it, but I did.))|
 
-```bash
-SELECT * FROM interviews
-WHERE suspect_id = '183'
-```
-| suspect_id | transcript |
-|:----------:|:----------:|
-|183|I wasn’t going to steal it, but I did.|
-
-## Solución
+## Solution
 ```bash
 SELECT * FROM suspects
 WHERE id = '183'
