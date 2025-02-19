@@ -5,7 +5,16 @@ CREATE TABLE IF NOT EXISTS users (
     age INTEGER,
     point INTEGER DEFAULT 0,
     gender TEXT
-
 );
 
 SELECT * FROM users;
+
+CREATE TABLE IF NOT EXISTS messages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_name INTEGER NOT NULL,
+    message TEXT NOT NULL,
+    FOREIGN KEY (id_name) REFERENCES users(id) 
+);
+
+SELECT * FROM messages;
+

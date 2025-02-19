@@ -1,0 +1,1 @@
+sqlite3 tabla.db "SELECT * FROM $1";

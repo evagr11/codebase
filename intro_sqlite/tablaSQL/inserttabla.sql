@@ -5,3 +5,10 @@ INSERT INTO users (name,password) VALUES ("user3","userpass3");
 
 SELECT * FROM users;
 
+INSERT INTO messages (id_name, message) VALUES (1, "Hola mundo");
+INSERT INTO messages (id_name, message) VALUES (2, "Hola!");
+INSERT INTO messages (id_name, message) VALUES (3, "Como estais?");
+
+SELECT * FROM messages;
+
+
