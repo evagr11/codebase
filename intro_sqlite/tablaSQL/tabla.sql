@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS users (
     name TEXT UNIQUE NOT NULL,
     password TEXT NOT NULL,
     age INTEGER,
-    point INTEGER,
+    point INTEGER DEFAULT 0,
     gender TEXT
 
 );
