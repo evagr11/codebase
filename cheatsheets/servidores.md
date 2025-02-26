@@ -7,5 +7,10 @@ https => S significa que es seguro, es decir pasa cifrado
 ## Instalar
 - nodejs => interprete/motor
 - npm => gestor dependdencias
+
 ### Backend
-- express
+Instalar en terminal
+- npm init -y
+- npm i express
+Lanzar servidor
+- node "server.js"
