@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="mediciones">
+        <h1>Tiempo: 0</h1>
+        <p>Valor: 12</p>
+    </section>
+    <script>
+        let datos =[
+            {tiempo: 0, valor: 12},
+            {tiempo: 1, valor: 13},
+            {tiempo: 2, valor: 14},
+            {tiempo: 3, valor: 15},
+            {tiempo: 4, valor: 16},
+            {tiempo: 5, valor: 17},
+            {tiempo: 6, valor: 19},
+            {tiempo: 7, valor: 20},
+            {tiempo: 8, valor: 21},
+            {tiempo: 9, valor: 22}
+        ]
+
+        let labels = []
+        let data = []
+
+        datos.forEach((valores) => {
+            labels.push(valores.tiempo);
+            data.push(valores.valor);
+        });
+
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '# of Votes',
+                    data: data,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+            scales: {
+                y: {
+                beginAtZero: true
+                }
+            }
+            }
+        });
+        
+
+        const contenedorMediciones = document.getElementById('mediciones');
+
+        
+        for (let i = 0; i < datos.length; i++) {
+            console.log(datos[i].tiempo);
+            console.log(datos[i].valor);
+            console.log('-------------------');
+        }
+        
+        datos.forEach((valores) => {
+            console.log(valores.tiempo);
+            console.log(valores.valor);
+            const h2 = document.createElement('h2');
+            const p = document.createElement('p');
+            h2.innerText = `Tiempo: ${valores.tiempo}`;
+            p.innerText = `Valor: ${valores.valor}`;
+            console.log(h2);
+            console.log('-------------------');
+            contenedorMediciones.appendChild(h2);
+            contenedorMediciones.appendChild(p);
+        });
+    </script>
+</body>
+</html>
