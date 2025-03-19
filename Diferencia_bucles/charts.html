@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    <canvas id="myChart" width="400" height="200"></canvas>
     <section id="mediciones">
         <h1>Tiempo: 0</h1>
         <p>Valor: 12</p>
     </section>
+
+
     <script>
         let datos =[
             {tiempo: 0, valor: 12},
@@ -39,7 +43,7 @@
             data: {
                 labels: labels,
                 datasets: [{
-                    label: '# of Votes',
+                    label: 'Valores',
                     data: data,
                     borderWidth: 1
                 }]
@@ -52,7 +56,6 @@
             }
             }
         });
-        
 
         const contenedorMediciones = document.getElementById('mediciones');
 
