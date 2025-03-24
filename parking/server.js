@@ -21,10 +21,68 @@ app.get('/', (req, res) => {
 });
 
 // Obtener todas las plazas de estacionamiento
+// Obtener todas las plazas de estacionamiento y mostrarlas en una tabla HTML
 app.get('/plazas', (req, res) => {
     const query = db.prepare('SELECT * FROM plazas');
     const plazas = query.all();
-    res.json(plazas);
+
+    // Generar la tabla HTML
+    let html = `
+        <html>
+        <head>
+            <title>Plazas de Estacionamiento</title>
+            <style>
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: left;
+                }
+                th {
+                    background-color: #f2f2f2;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Plazas de Estacionamiento</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Piso</th>
+                        <th>Tipo</th>
+                        <th>Estado</th>
+                        <th>Fecha/Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+    `;
+
+    // Agregar filas a la tabla con los datos de las plazas
+    plazas.forEach(plaza => {
+        html += `
+            <tr>
+                <td>${plaza.id}</td>
+                <td>${plaza.piso_id}</td>
+                <td>${plaza.tipo}</td>
+                <td>${plaza.estado}</td>
+                <td>${plaza.fecha_hora}</td>
+            </tr>
+        `;
+    });
+
+    html += `
+                </tbody>
+            </table>
+        </body>
+        </html>
+    `;
+
+    // Enviar la tabla HTML como respuesta
+    res.send(html);
 });
 
 // Obtener una plaza de estacionamiento por ID
