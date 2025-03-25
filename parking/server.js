@@ -50,6 +50,56 @@ app.get('/plazas', (req, res) => {
     res.send(html);
 });
 
+// Nueva ruta para mostrar las plazas como un dibujo visual, diferenciando por pisos
+app.get('/plazasVisual', (req, res) => {
+    const query = db.prepare('SELECT * FROM plazas');
+    const plazas = query.all();
+
+    // Agrupar las plazas por piso y completar hasta 20 plazas por piso
+    const plazasPorPiso = plazas.reduce((acc, plaza) => {
+        acc[plaza.piso_id] = acc[plaza.piso_id] || [];
+        acc[plaza.piso_id].push(plaza);
+        return acc;
+    }, {});
+
+    Object.keys(plazasPorPiso).forEach(piso => {
+        while (plazasPorPiso[piso].length < 20) {
+            plazasPorPiso[piso].push({
+                id: `P${piso}-${plazasPorPiso[piso].length + 1}`,
+                piso_id: piso,
+                tipo: 'publicos',
+                estado: 'libre',
+            });
+        }
+    });
+
+    // Leer el archivo HTML externo
+    const htmlPath = path.join(__dirname, 'plazasVisual.html');
+    let html = fs.readFileSync(htmlPath, 'utf8');
+
+    // Generar contenido dinámico
+    let content = '';
+    for (const piso in plazasPorPiso) {
+        content += `
+            <div class="piso">
+                <div class="titulo-piso">Piso ${piso}</div>
+                <div class="grid">
+        `;
+        plazasPorPiso[piso].forEach(plaza => {
+            const tipoClase = plaza.tipo;
+            const estadoClase = plaza.estado === 'libre' ? 'libre' : 'ocupada';
+            content += `
+                <div class="plaza ${tipoClase} ${estadoClase}">
+                    ${plaza.id}
+                </div>
+            `;
+        });
+        content += `</div></div>`;
+    }
+
+    // Reemplazar el marcador en el HTML y enviar la respuesta
+    res.send(html.replace('{{content}}', content));
+});
 // Iniciar el servidor
 app.listen(port, () => {
     console.log(`Servidor escuchando en el puerto ${port}`);

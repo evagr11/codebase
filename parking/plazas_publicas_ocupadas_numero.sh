@@ -1,0 +1,2 @@
+# Selección que devuelve el número total de plazas públicas ocupadas
+sqlite3 parking.db "SELECT COUNT(*) AS plazas_publicas_ocupadas FROM plazas WHERE (tipo = 'publicos' OR tipo = 'electricos' OR tipo = 'minusvalido') AND estado = 'ocupado';"

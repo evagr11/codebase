@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Plazas</title>
+    <style>
+        .parking {
+            display: flex; /* Usar flexbox para organizar los pisos */
+            gap: 20px; /* Espaciado entre los pisos */
+            flex-wrap: wrap; /* Permitir que los pisos se ajusten si no caben en una fila */
+            justify-content: center; /* Centrar los pisos horizontalmente */
+        }
+        .piso {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .titulo-piso {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 50px); /* Ajusta el número de columnas según sea necesario */
+            gap: 10px;
+        }
+        .plaza {
+            width: 50px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            border-radius: 5px;
+            border: 2px solid transparent;
+        }
+        .libre {
+            opacity: 1;
+        }
+        .ocupada {
+            opacity: 0.3;
+        }
+        .minusvalido {
+            background-color: blue;
+            border-color: blue;
+        }
+        .electricos {
+            background-color: yellow;
+            color: black;
+            border-color: yellow;
+        }
+        .privada {
+            background-color: purple;
+            border-color: purple;
+        }
+        .publicos {
+            background-color: gray;
+            border-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Visualización de Plazas por Piso</h1>
+    <p>Las plazas que ves en azul están reservadas para minusválidos, amarillas para vehículos eléctricos, moradas para clientes y grises accesibles para todos los usuarios.</p>
+    <div class="parking">
+        {{content}}
+    </div>
+</body>
+</html>
