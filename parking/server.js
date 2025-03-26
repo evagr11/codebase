@@ -5,6 +5,11 @@ const path = require('path');
 const port = 3000;
 const app = express();
 
+const http = require('http');
+const { Server } = require('socket.io');
+const server = http.createServer(app);
+const io = new Server(server);
+
 app.use(express.json());
 
 // Conectar a la base de datos parking.db
@@ -14,6 +19,16 @@ const db = betterSqlite3('parking.db');
 const initSqlPath = path.join(__dirname, 'init.sql');
 const initSql = fs.readFileSync(initSqlPath, 'utf8');
 db.exec(initSql);
+
+// Endpoint de conexion
+io.on('connection', (socket) => {
+    console.log('Usuario conectado');
+    socket.emit('connected', 'Connected to the server');
+
+    socket.on('disconnect', () => {
+        console.log('Usuario desconectado');
+    });
+});
 
 // Ruta principal
 app.get('/', (req, res) => {
@@ -25,8 +40,8 @@ app.get('/plazas', (req, res) => {
     const query = db.prepare('SELECT * FROM plazas');
     const plazas = query.all();
 
-    // Leer el archivo HTML externo
-    const htmlPath = path.join(__dirname, 'plazas.html');
+    // Leer el archivo HTML externo desde la carpeta "public"
+    const htmlPath = path.join(__dirname, 'public', 'plazas.html');
     let html = fs.readFileSync(htmlPath, 'utf8');
 
     // Generar las filas de la tabla con los datos de las plazas
@@ -74,7 +89,7 @@ app.get('/plazasVisual', (req, res) => {
     });
 
     // Leer el archivo HTML externo
-    const htmlPath = path.join(__dirname, 'plazasVisual.html');
+    const htmlPath = path.join(__dirname, 'public', 'plazasVisual.html');
     let html = fs.readFileSync(htmlPath, 'utf8');
 
     // Generar contenido dinámico
