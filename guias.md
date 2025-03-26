@@ -8,3 +8,6 @@ https://flexboxfroggy.com/#es
 ## MD
 https://obsidian.md/
 https://www.notion.com/es-es
+
+## Cifrar
+https://gchq.github.io/CyberChef/
