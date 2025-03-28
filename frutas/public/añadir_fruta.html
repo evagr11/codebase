@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir fruta</title>
+</head>
+<body>
+    <form>
+        <label for="fruta">Fruta: </label>
+        <input type="text" id="fruta" name="fruta" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        const formulario = document.querySelector('form');
+        formulario.addEventListener('submit', () => {
+            event.preventDefault();
+            const fruta = document.querySelector('#fruta').value;
+            console.log(fruta);
+            const opciones = {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({fruta})
+            }
+            fetch("/frutas", opciones)
+                .then(respuesta => respuesta.json())
+                .then(data => {
+                    console.log(data);
+                    alert(data)
+                })
+        })
+    </script>
+</body>
+</html>
