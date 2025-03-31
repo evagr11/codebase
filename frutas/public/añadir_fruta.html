@@ -6,15 +6,20 @@
     <title>Añadir fruta</title>
 </head>
 <body>
-    <form>
+    <form id="fruta-form">
         <label for="fruta">Fruta: </label>
         <input type="text" id="fruta" name="fruta" required>
+
         <button type="submit">Enviar</button>
     </form>
-
+    <ul id="lista-fruta"></ul>
     <script>
-        const formulario = document.querySelector('form');
-        formulario.addEventListener('submit', () => {
+        const formulario = document.querySelector('#fruta-form');
+        const listaFrutas = document.querySelector('#lista-fruta');
+        
+        obtenerFrutas();
+
+        formulario.addEventListener('submit', (event) => {
             event.preventDefault();
             const fruta = document.querySelector('#fruta').value;
             console.log(fruta);
@@ -23,15 +28,47 @@
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({fruta})
-            }
+                body: JSON.stringify({ fruta })
+            };
             fetch("/frutas", opciones)
                 .then(respuesta => respuesta.json())
-                .then(data => {
-                    console.log(data);
-                    alert(data)
+                .then(frutas => {
+                    obtenerFrutas();
                 })
-        })
+            })
+            const frutasDiccionario = {
+                "manzana": "🍎",
+                "pera": "🍐",
+                "platano": "🍌",
+                "fresa": "🍓",
+                "uva": "🍇",
+                "sandia": "🍉",
+                "melon": "🍈",
+                "cereza": "🍒",
+                "naranja": "🍊",
+                "limon": "🍋",
+                "piña": "🍍",
+                "kiwi": "🥝",
+                "aguacate": "🥑",
+                "mango": "🥭",
+                "papaya": "🥭",
+                "coco": "🥥",
+                "mandarina": "🍊",
+                "albaricoque": "🍑"
+            }
+            function obtenerFrutas(){
+                listaFrutas.innerHTML = '';
+                fetch("/frutas")
+                .then(respuesta => respuesta.json())
+                .then(frutas => {
+                    frutas.forEach(fruta => {
+                        const li = document.createElement('li');
+                        li.innerHTML = frutasDiccionario[fruta] || fruta;
+                        listaFrutas.appendChild(li);
+                    })
+                })
+            }
+            
     </script>
 </body>
 </html>
