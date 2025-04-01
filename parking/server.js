@@ -115,6 +115,44 @@ app.get('/plazasVisual', (req, res) => {
     // Reemplazar el marcador en el HTML y enviar la respuesta
     res.send(html.replace('{{content}}', content));
 });
+
+// Nueva ruta para actualizar el estado de una plaza
+app.post('/actualizarPlaza', (req, res) => {
+    const { id, estado } = req.body;
+
+    // Actualizar el estado de la plaza en la base de datos
+    const query = db.prepare('UPDATE plazas SET estado = ? WHERE id = ?');
+    const result = query.run(estado, id);
+
+    // Verificar si se actualizó alguna fila
+    if (result.changes > 0) {
+        res.json({ success: true });
+    } else {
+        res.json({ success: false });
+    }
+});
+
+// Endpoint para servir el archivo actualizarPlaza.html
+app.get('/actualizarPlaza', (req, res) => {
+    const htmlPath = path.join(__dirname, 'public', 'actualizarPlaza.html');
+    res.sendFile(htmlPath);
+});
+
+// Endpoint para obtener las plazas agrupadas por piso
+app.get('/api/plazas', (req, res) => {
+    const query = db.prepare('SELECT * FROM plazas');
+    const plazas = query.all();
+
+    // Agrupar las plazas por piso
+    const plazasPorPiso = plazas.reduce((acc, plaza) => {
+        acc[plaza.piso_id] = acc[plaza.piso_id] || [];
+        acc[plaza.piso_id].push(plaza);
+        return acc;
+    }, {});
+
+    res.json(plazasPorPiso);
+});
+
 // Iniciar el servidor
 app.listen(port, () => {
     console.log(`Servidor escuchando en el puerto ${port}`);

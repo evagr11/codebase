@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Plazas</title>
+    <style>
+        .piso {
+            margin-bottom: 20px;
+        }
+        .titulo-piso {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .plaza {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .plaza.libre {
+            background-color: #d4edda;
+        }
+        .plaza.ocupada {
+            background-color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestión de Plazas</h1>
+    <div id="plazas-container"></div>
+
+    <script>
+        // Función para actualizar el estado de una plaza
+        function actualizarPlaza(id, nuevoEstado) {
+            fetch('/actualizarPlaza', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id, estado: nuevoEstado }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload(); // Recargar la página para reflejar los cambios
+                }
+            });
+        }
+
+        // Obtener las plazas agrupadas por piso y generar el contenido dinámico
+        fetch('/api/plazas')
+            .then(response => response.json())
+            .then(plazasPorPiso => {
+                const container = document.getElementById('plazas-container');
+                for (const piso in plazasPorPiso) {
+                    const pisoDiv = document.createElement('div');
+                    pisoDiv.classList.add('piso');
+                    pisoDiv.innerHTML = `<div class="titulo-piso">Piso ${piso}</div>`;
+
+                    const plazas = plazasPorPiso[piso];
+                    plazas.forEach(plaza => {
+                        const plazaDiv = document.createElement('div');
+                        plazaDiv.classList.add('plaza', plaza.estado === 'libre' ? 'libre' : 'ocupada');
+                        plazaDiv.innerHTML = `
+                            <span>Plaza ${plaza.id}</span>
+                            <button onclick="actualizarPlaza(${plaza.id}, '${plaza.estado === 'libre' ? 'ocupada' : 'libre'}')">
+                                ${plaza.estado === 'libre' ? 'Ocupar' : 'Liberar'}
+                            </button>
+                        `;
+                        pisoDiv.appendChild(plazaDiv);
+                    });
+
+                    container.appendChild(pisoDiv);
+                }
+            });
+    </script>
+</body>
+</html>
