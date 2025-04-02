@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS frutas (
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    nombre TEXT NOT NULL                
+);
