@@ -10,9 +10,25 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/frutas", (req, res) => {
+    console.log(req.headers.accept);
+    if(req.headers.accept === "application/json") {
     const query = db.prepare("SELECT * FROM frutas");
     const frutas = query.all();
     res.json(frutas);
+    } else {
+        let html = "<ul>";
+        const query = db.prepare("SELECT * FROM frutas");
+        const frutas = query.all();
+        frutas.forEach((fruta) => {
+            html += `<li>${fruta.nombre}</li>`;
+        })
+        html += "</ul>";
+    }
+});
+
+app.post("/frutas", (req, res) => {
+    console.log(req.headers);
+    res.send("Petición recibida");
 });
 
 app.listen(3000, () => 

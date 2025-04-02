@@ -4,71 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Añadir fruta</title>
+    <script src=""https://unpkg.com/htmx.org/dist/htmx.js"></script>
 </head>
 <body>
-    <form id="fruta-form">
+    <form hx-post="/frutas" hx-target="#lista-frutas" hx-trigger="submit">
         <label for="fruta">Fruta: </label>
         <input type="text" id="fruta" name="fruta" required>
 
         <button type="submit">Enviar</button>
     </form>
-    <ul id="lista-fruta"></ul>
-    <script>
-        const formulario = document.querySelector('#fruta-form');
-        const listaFrutas = document.querySelector('#lista-fruta');
-        
-        obtenerFrutas();
-
-        formulario.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const fruta = document.querySelector('#fruta').value;
-            console.log(fruta);
-            const opciones = {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ fruta })
-            };
-            fetch("/frutas", opciones)
-                .then(respuesta => respuesta.json())
-                .then(frutas => {
-                    obtenerFrutas();
-                })
-            })
-            const frutasDiccionario = {
-                "manzana": "🍎",
-                "pera": "🍐",
-                "platano": "🍌",
-                "fresa": "🍓",
-                "uva": "🍇",
-                "sandia": "🍉",
-                "melon": "🍈",
-                "cereza": "🍒",
-                "naranja": "🍊",
-                "limon": "🍋",
-                "piña": "🍍",
-                "kiwi": "🥝",
-                "aguacate": "🥑",
-                "mango": "🥭",
-                "papaya": "🥭",
-                "coco": "🥥",
-                "mandarina": "🍊",
-                "albaricoque": "🍑"
-            }
-            function obtenerFrutas(){
-                listaFrutas.innerHTML = '';
-                fetch("/frutas")
-                .then(respuesta => respuesta.json())
-                .then(frutas => {
-                    frutas.forEach(fruta => {
-                        const li = document.createElement('li');
-                        li.innerHTML = frutasDiccionario[fruta] || fruta;
-                        listaFrutas.appendChild(li);
-                    })
-                })
-            }
-            
-    </script>
+    <ul id="lista-fruta"></ul>     
+    
+    <ul id="test" hx-get="/frutas" hx-target="#test" hx-trigger="load">
 </body>
 </html>
