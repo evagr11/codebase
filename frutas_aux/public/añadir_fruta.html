@@ -10,12 +10,11 @@
     <form hx-post="/frutas" hx-target="#lista-frutas" hx-trigger="submit">
         <label for="fruta">Fruta: </label>
         <input type="text" id="fruta" name="fruta" required>
+
         <button type="submit">Enviar</button>
     </form>
+    <ul id="lista-fruta"></ul>     
     
-    <ul id="lista-frutas"></ul> <!-- Corregido el ID -->
-
-    <!-- Cargar frutas al cargar la página -->
-    <ul id="test" hx-get="/frutas" hx-target="#test" hx-trigger="load"></ul>
+    <ul id="test" hx-get="/frutas" hx-target="#test" hx-trigger="load">
 </body>
 </html>
