@@ -7,10 +7,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.get("/users", (req, res) => {
-    const users = getAllUsers();
-    res.json(users);
-});
+const usersRouter = require("./routes/users"); // Importar el router de usuarios
+app.use(usersRouter); // Usar el router de usuarios
 
 app.listen(3000, () => {
     console.log("Servidor escuchando en el puerto 3000");
