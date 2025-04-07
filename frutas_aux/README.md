@@ -29,3 +29,11 @@ const express = require("express")
 node index.js
 node server.js
 ```
+
+## Modelo MVC
+Organizar nuestro proyecto en diferentes partes
+**M** - Modelo - Funciones o clases
+           - Interactua con la base de datos
+
+**V** - Vista  - Como se ve
+**C** - Controlador  - Rutas
