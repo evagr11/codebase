@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios</title>
+</head>
+<body>
+    <h1>Lista de Usuarios</h1>
+    
+    <!-- Formulario para añadir usuarios -->
+    <form id="add-user-form">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="password" id="pass" placeholder="Contraseña" required>
+        <button type="submit">Añadir Usuario</button>
+    </form>
+
+    <ul id="user-list">
+        <!-- Aquí se insertarán los usuarios -->
+    </ul>
+
+    <h2>Limpiar Base de Datos</h2>
+    <form id="clear-db-form">
+        <input type="password" id="auth-key" placeholder="Clave de autorización" required>
+        <button type="submit">Limpiar Base de Datos</button>
+    </form>
+
+    <script>
+        // Función para obtener y mostrar la lista de usuarios
+        function fetchUsers() {
+            fetch('/users')
+                .then(response => response.json())
+                .then(users => {
+                    const userList = document.getElementById('user-list');
+                    userList.innerHTML = ''; // Limpiar la lista antes de actualizarla
+                    users.forEach(user => {
+                        const li = document.createElement('li');
+                        li.textContent = user.nombre; // Asume que cada usuario tiene un campo 'nombre'
+                        userList.appendChild(li);
+                    });
+                })
+                .catch(error => console.error('Error al obtener la lista de usuarios:', error));
+        }
+
+        // Llamar a fetchUsers al cargar la página
+        fetchUsers();
+
+        // Manejar el envío del formulario para añadir usuarios
+        document.getElementById('add-user-form').addEventListener('submit', (event) => {
+            event.preventDefault(); // Evitar que el formulario recargue la página
+
+            const nombre = document.getElementById('nombre').value;
+            const pass = document.getElementById('pass').value;
+
+            // Enviar los datos al servidor
+            fetch('/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nombre, pass })
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Limpiar el formulario
+                    document.getElementById('add-user-form').reset();
+                    // Actualizar la lista de usuarios
+                    fetchUsers();
+                }
+            })
+        });
+
+        // Manejar el envío del formulario para limpiar la base de datos
+        document.getElementById('clear-db-form').addEventListener('submit', (event) => {
+            event.preventDefault(); // Evitar que el formulario recargue la página
+
+            const key = document.getElementById('1234').value;
+
+            // Enviar la solicitud al servidor
+            fetch('/clear', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ key })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Base de datos limpiada correctamente");
+                    fetchUsers(); // Actualizar la lista de usuarios
+                }
+            })
+        });
+    </script>
+</body>
+</html>
+
+<!-- 1 representar lista de ususarios
+2 control para meter usuarios con contraseña, que se actualicen tambien en la lista
+3 que limpie la base de datos, sin eliminar la tabla, aqui se accedera con una clave para que no pueda acceder todo el mundo
+4 opcion para que la base de datos salga como lista, como json o como una tabla -->

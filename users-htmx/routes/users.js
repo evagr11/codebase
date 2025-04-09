@@ -1,3 +1,4 @@
+//Controlador
 const { getAllUsers, addUser } = require("../models/users"); // Importar las funciones de users.js
 
 const express = require("express");
