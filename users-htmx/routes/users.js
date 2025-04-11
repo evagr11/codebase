@@ -1,8 +1,10 @@
 //Controlador
-const { getAllUsers, addUser } = require("../models/users"); // Importar las funciones de users.js
+const { getAllUsers, addUser, clearUsers} = require("../models/users"); // Importar las funciones de users.js
 
 const express = require("express");
 const router = express.Router();
+
+const AUTH_KEY = '1234';
 
 // Endpoint para obtener todos los usuarios
 // El método get se utiliza para obtener datos del servidor
@@ -23,6 +25,19 @@ router.post("/users", (req, res) => {
     const pass = req.body.pass;
     addUser(nombre, pass);
     res.send("Usuario añadido correctamente");
+});
+
+// Endpoint para eliminar todos los usuarios
+// El método delete se utiliza para eliminar datos del servidor
+// En este caso, se eliminan todos los usuarios de la base de datos
+// La función clearUsers se encarga de ejecutar la consulta SQL y eliminar todos los usuarios
+router.delete("/users", (req, res) => {
+    const { key } = req.body;
+    if (key !== AUTH_KEY) {
+        return res.status(403).send("Clave incorrecta");
+    }
+    const message = clearUsers();
+    res.send(message);
 });
 
 module.exports = router;
