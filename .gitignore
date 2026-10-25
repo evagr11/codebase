@@ -1,0 +1,13 @@
+# Dependencias de Node (se instalan con npm install)
+node_modules/
+
+# Claves y variables de entorno
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Sistema
+.DS_Store
+Thumbs.db
