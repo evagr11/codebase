@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Servidor del ejemplo de usuarios con htmx: Express, archivos estáticos y el router de usuarios.
+ */
 const {getAllUsers, addUser, clearUsers} = require("./models/users"); // Importar las funciones de users.js
 
 const express = require("express");

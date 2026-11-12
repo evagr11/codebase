@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Rutas de la API de usuarios del ejemplo con htmx.
+ */
 //Controlador
 const { getAllUsers, addUser, clearUsers} = require("../models/users"); // Importar las funciones de users.js
 

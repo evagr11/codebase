@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Segunda versión del servidor del parking.
+ */
 const express = require('express');
 const betterSqlite3 = require('better-sqlite3');
 const fs = require('fs');

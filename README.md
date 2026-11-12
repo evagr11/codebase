@@ -4,6 +4,7 @@
 
 <div align="center">
   <a href="https://github.com/evagr11/codebase" target="_blank"><img src="https://img.shields.io/badge/Ver_Código-0F172A?style=for-the-badge&logo=github&logoColor=white" alt="Ver Código"></a>
+  <a href="https://evagr11.github.io/codebase/" target="_blank"><img src="https://img.shields.io/badge/Documentación_(JSDoc)-0F172A?style=for-the-badge&logo=javascript&logoColor=white" alt="Documentación del código"></a>
   <a href="#-índice-de-proyectos"><img src="https://img.shields.io/badge/Ir_al_Índice-64748B?style=for-the-badge&logo=bookstack&logoColor=white" alt="Ir al Índice"></a>
   <img src="https://img.shields.io/badge/Estado-Terminado-334155?style=for-the-badge" alt="Estado Terminado">
 </div>

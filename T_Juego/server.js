@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Juego de clics (servidor): Express con `GET /puntos` y `POST /incrementar`, con los puntos en memoria.
+ */
 const express = require('express');
 const path = require('path');
 const app = express();

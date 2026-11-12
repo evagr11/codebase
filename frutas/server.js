@@ -1,3 +1,7 @@
+/**
+ * @file
+ * API de frutas con Express y SQLite (`sqlite3`): crea la tabla y permite listar y añadir frutas.
+ */
 const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
 

@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Juego de clics (cliente): pide los puntos al servidor y los suma con un botón.
+ */
 let puntos = 0;
 const puntosDiv = document.getElementById('puntos');
 const clickButton = document.getElementById('clickButton');

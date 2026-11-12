@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Servidor Express mínimo: archivos estáticos y una ruta `/testing` que devuelve el host desde el que se llama.
+ */
 const express = require('express');
 
 const app = express();

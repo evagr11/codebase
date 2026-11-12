@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Sketch de p5.js que dibuja trayectorias con `sin` y ruido Perlin (`noise`).
+ */
 function setup() {
     createCanvas(400, 400);
     background(220);

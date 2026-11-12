@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Ejercicio de cadenas: cambia las U por T en una secuencia.
+ */
 let prueba = "AAGUAUGAA"
 
 //let lista = prueba.split('') crear una lista

@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Versión de la API de frutas con `body-parser` y SQLite.
+ */
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bodyParser = require('body-parser');

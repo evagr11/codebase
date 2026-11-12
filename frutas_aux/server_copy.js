@@ -1,3 +1,7 @@
+/**
+ * @file
+ * API de frutas con `better-sqlite3`: devuelve JSON o HTML según la cabecera `Accept`.
+ */
 const express = require("express");
 const betterSqlite3 = require("better-sqlite3");
 

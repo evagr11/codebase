@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Dibuja en la consola una caja con caracteres de recuadro.
+ */
 let ancho = 7
 let largo = 3
 

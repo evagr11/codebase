@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Servidor del juego de p5.js: crea la base de datos de usuarios con `init.sql` y sirve el juego.
+ */
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const fs = require('fs');

@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Primer sketch de p5.js: formas básicas que siguen al ratón y animación con `frameCount`.
+ */
 function setup() {
     createCanvas(400, 400);
   }

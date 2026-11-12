@@ -1,3 +1,7 @@
+/**
+ * @file
+ * API de un parking con Express, `better-sqlite3` y Socket.IO, que avisa en tiempo real de los cambios de las plazas.
+ */
 const express = require('express');
 const betterSqlite3 = require('better-sqlite3');
 const fs = require('fs');

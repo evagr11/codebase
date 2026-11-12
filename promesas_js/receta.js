@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Práctica de promesas: pide una receta a dummyjson.com y pinta su nombre, foto y datos.
+ */
 fetch('https://dummyjson.com/recipes/25')
 .then(res => res.json())
 .then(data => {

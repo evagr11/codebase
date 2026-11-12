@@ -1,8 +1,17 @@
+/**
+ * @file
+ * Sketch de p5.js que inventa palabras al azar uniendo sílabas de consonante y vocal.
+ */
 const vocales = "aeiou".split("")
 const consonantes = "qwrtypsdfghjklñzxcvbnm".split("")
 console.log(vocales, consonantes)
 
 
+/**
+ * Crea una palabra inventada.
+ * @param {number} n_silabas número de sílabas.
+ * @returns {string} la palabra.
+ */
 function crearPalabra(n_silabas){
   let palabra = ""
   for(let i = 0; i < n_silabas; i++){

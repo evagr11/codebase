@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Dibuja en la consola una ventana con caracteres de recuadro, por partes.
+ */
 const esquina1 = "╔";
 const esquina2 = "╗";
 const esquina3 = "╚";
