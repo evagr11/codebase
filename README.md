@@ -5,7 +5,7 @@
 <div align="center">
   <a href="https://github.com/evagr11/codebase" target="_blank"><img src="https://img.shields.io/badge/Ver_Código-0F172A?style=for-the-badge&logo=github&logoColor=white" alt="Ver Código"></a>
   <a href="https://evagr11.github.io/codebase/" target="_blank"><img src="https://img.shields.io/badge/Documentación_(JSDoc)-0F172A?style=for-the-badge&logo=javascript&logoColor=white" alt="Documentación del código"></a>
-  <a href="#-índice-de-proyectos"><img src="https://img.shields.io/badge/Ir_al_Índice-64748B?style=for-the-badge&logo=bookstack&logoColor=white" alt="Ir al Índice"></a>
+  <a href="#índice-de-proyectos"><img src="https://img.shields.io/badge/Ir_al_Índice-64748B?style=for-the-badge&logo=bookstack&logoColor=white" alt="Ir al Índice"></a>
   <img src="https://img.shields.io/badge/Estado-Terminado-334155?style=for-the-badge" alt="Estado Terminado">
 </div>
 
@@ -15,31 +15,31 @@
   <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&size=18&duration=3500&pause=800&color=94A3B8&center=true&vCenter=true&width=600&lines=JavaScript+Vanilla+para+manipular+el+DOM%3BServidores+con+Node.js+y+Express%3BBases+de+datos+con+SQLite%3BSketches+creativos+con+p5.js%3BScripts+de+Python+y+Hugging+Face" alt="Typing SVG" /></a>
 </div>
 
-# 🚀 Sobre el Proyecto
+# Sobre el Proyecto
 
 **Codebase** es mi cuaderno de código de **1º de DAM**: una colección de ejercicios de clase, pequeños proyectos y apuntes que van desde manipular el DOM con JavaScript puro hasta montar servidores con Node.js y SQLite, pasando por creative coding con p5.js, scripts de Python y retos de Linux y SQL.
 
 Cada carpeta es independiente: algunas son una sola página HTML que se abre en el navegador y otras son pequeñas aplicaciones con su propio servidor y base de datos.
 
-✨ **Características principales:**
+**Características principales:**
 
-*   💻 **Ejercicios de DOM:** Más de una docena de ejemplos con **JavaScript Vanilla**: eventos en inputs, rangos, operaciones, creación dinámica de elementos…
-*   🌐 **Servidores con Node.js:** Pequeñas APIs con **Express** que sirven datos desde **SQLite** y exponen endpoints REST, una de ellas con **Socket.IO** para actualizar en tiempo real.
-*   🗃️ **SQL desde la terminal:** Bases de datos **SQLite** consultadas con scripts `.sh` y con Python.
-*   🎨 **Creative coding con p5.js:** Sketches y juegos que se ejecutan en el navegador.
-*   🐍 **Python y APIs externas:** Peticiones HTTP, un CRUD contra **JSONBin** y modelos de **Hugging Face** (análisis de emociones, generación de texto e imágenes).
-*   🕵️ **Retos de práctica:** Niveles de **Bandit** (OverTheWire) para aprender Linux y SSH, y casos de **SQL Noir** para practicar consultas.
-*   📝 **Cheatsheets:** 14 guías rápidas en Markdown sobre Git, Linux, SSH, redes, servidores, JSON, async/await, MVC, ORM y bases de datos no relacionales.
+*   **Ejercicios de DOM:** Más de una docena de ejemplos con **JavaScript Vanilla**: eventos en inputs, rangos, operaciones, creación dinámica de elementos…
+*   **Servidores con Node.js:** Pequeñas APIs con **Express** que sirven datos desde **SQLite** y exponen endpoints REST, una de ellas con **Socket.IO** para actualizar en tiempo real.
+*   **SQL desde la terminal:** Bases de datos **SQLite** consultadas con scripts `.sh` y con Python.
+*   **Creative coding con p5.js:** Sketches y juegos que se ejecutan en el navegador.
+*   **Python y APIs externas:** Peticiones HTTP, un CRUD contra **JSONBin** y modelos de **Hugging Face** (análisis de emociones, generación de texto e imágenes).
+*   **Retos de práctica:** Niveles de **Bandit** (OverTheWire) para aprender Linux y SSH, y casos de **SQL Noir** para practicar consultas.
+*   **Cheatsheets:** 14 guías rápidas en Markdown sobre Git, Linux, SSH, redes, servidores, JSON, async/await, MVC, ORM y bases de datos no relacionales.
 
-# 🧠 Contexto del Proyecto
+# Contexto del Proyecto
 
 Este repositorio recoge el trabajo del primer curso del ciclo formativo de **Desarrollo de Aplicaciones Multiplataforma (1º DAM)**, sobre todo de las asignaturas de **Lenguajes de Marcas** y **Bases de Datos**. Funciona como un diario de código: los ejercicios hechos en clase, proyectos propios para reforzar lo aprendido y una base de apuntes para consultar rápido.
 
 La variedad de carpetas y tecnologías refleja todo lo que se tocó durante el curso. Es el punto de partida del resto de proyectos de mi GitHub.
 
-# 🗂️ Índice de Proyectos
+# Índice de Proyectos
 
-### 🌐 Aplicaciones con servidor (Node.js + Express)
+### Aplicaciones con servidor (Node.js + Express)
 
 <div align="center">
 
@@ -54,7 +54,7 @@ La variedad de carpetas y tecnologías refleja todo lo que se tocó durante el c
 
 </div>
 
-### 💻 Frontend y JavaScript
+### Frontend y JavaScript
 
 <div align="center">
 
@@ -72,7 +72,7 @@ La variedad de carpetas y tecnologías refleja todo lo que se tocó durante el c
 
 </div>
 
-### 🗃️ Bases de datos y Python
+### Bases de datos y Python
 
 <div align="center">
 
@@ -86,7 +86,7 @@ La variedad de carpetas y tecnologías refleja todo lo que se tocó durante el c
 
 </div>
 
-### 📝 Apuntes y retos
+### Apuntes y retos
 
 <div align="center">
 
@@ -99,7 +99,7 @@ La variedad de carpetas y tecnologías refleja todo lo que se tocó durante el c
 
 </div>
 
-# 🛠️ Stack Tecnológico
+# Stack Tecnológico
 
 <div align="center">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
@@ -129,7 +129,7 @@ La variedad de carpetas y tecnologías refleja todo lo que se tocó durante el c
 
 </div>
 
-# 📂 Estructura del Proyecto
+# Estructura del Proyecto
 
 ```bash
 codebase/
@@ -163,7 +163,7 @@ codebase/
 └── README.md
 ```
 
-# 🚀 Cómo Utilizar el Proyecto
+# Cómo Utilizar el Proyecto
 
 Como cada carpeta es un proyecto independiente, la forma de ejecutarlo depende del tipo.
 
@@ -188,7 +188,7 @@ npm start
 
 Después abre `http://localhost:3000`. En `users-htmx/`, `http_servidor_basico/` y `T_Juego/` no hay script `start`, así que se arrancan con `node server.js` (o `node index.js` en el servidor básico).
 
-> ⚠️ El `npm start` de `juego_p5/` borra la base de datos con `rm`, que no existe en el CMD de Windows. Ahí usa Git Bash, o borra `usuarios.db` a mano y lanza `npx nodemon server.js`.
+> El `npm start` de `juego_p5/` borra la base de datos con `rm`, que no existe en el CMD de Windows. Ahí usa Git Bash, o borra `usuarios.db` a mano y lanza `npx nodemon server.js`.
 
 ### 4. Scripts de Python
 
